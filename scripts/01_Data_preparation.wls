@@ -13,7 +13,7 @@ Histogram[
 
 
 (* map wavelengths into standard color names *)
-colorName [wavelength_?(Between[{313,380}])] := "Ultraviolet"
+colorName[wavelength_?(Between[{313,380}])] := "Ultraviolet"
 colorName[wavelength_?(Between[{380,450}])] := "Violet"
 colorName[wavelength_?(Between[{450,495}])] := "Blue"
 colorName[wavelength_?(Between[{495,570}])] := "Green"
