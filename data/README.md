@@ -1,0 +1,1 @@
+Data obtained from the [KRICT LitDX](https://litdx.materials.chemdx.org) dataset, as provided to us for the hackathon in [2_LitDX_IPO](https://gitlab.chemdx.org/global-network/2024-krict-chemdx-hackathon/-/tree/master/Hackathon_problems/2_LitDX_IPO) on 06 Nov 2024
