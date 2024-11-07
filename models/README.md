@@ -1,0 +1,1 @@
+The zip-file in this directory contains the LoRA BP16 weights for the Llama-3.1-8B fine-tuned model.
