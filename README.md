@@ -15,7 +15,7 @@ Motivated by my recent work on [solid-state chemistry predictions using fine-tun
 
 The data was provided as an XLSX file (`data/Inorganic_Phosphor_Optical.xlsx`), where the maximum emission wavelength is provided in nanometers.
 
-The script `scripts/01_Data_preparation.wls` converts this to the corresponding color, and performs a random 80/20 train/test split of the data.  It also does some visualization of the dataset, which we show below:
+The script `scripts/01_Data_preparation.wls` converts this to the corresponding color, and performs a random 80/20% train/test split of the data. (There are 3008 training items and 752 test items.)  It also does some visualization of the dataset, which we show below:
 
 ![Histogram of wavelengths](figures/emission_distribution.jpg)
 
@@ -72,8 +72,8 @@ Fine-tuning gpt-4o-mini model cost $2.22 USD.  You'll have to make your own, if 
 ![GPT-4o-mini confusion matrix](figures/gpt4omini_predictions.jpg)
 
 **Possible improvements:**
-- Play with fine-tuning hyperparameters
-- Perform a cross-validation to asssess error bars
+- Play with fine-tuning hyperparameters and prompt
+- Perform a cross-validation to assess error bars
 - Examine the log-probabilities of output, evaluate perplexity, etc.
 
 # Conclusions and Future Directions
