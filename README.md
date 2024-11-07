@@ -15,9 +15,9 @@ The data was provided as an XLSX file (`data/Inorganic_Phosphor_Optical.xlsx`), 
 
 The script `scripts/01_Data_preparation.wls` converts this to the corresponding color, and performs a random 80/20 train/test split of the data.  It also does some visualization of the data, which we show below:
 
-![Histogram of wavelengths](figures/emission_distribution.jpg)
+![Histogram of wavelengths](figures/emission_distribution.jpg | width = 300)
 
-![Color categories](figures/emission_colors.jpg)
+![Color categories](figures/emission_colors.jpg | width = 300)
 
 
 # Modeling Methods & Results
@@ -28,7 +28,7 @@ For reference, the most common class is "Orange" emission, and if you select thi
 
 Relevant code is in `scripts/05_Edit_Distance.wls`.  In short, we compute the [Levenshtein edit distance](https://reference.wolfram.com/language/ref/EditDistance.html) between the a query chemical formula and the examples in the training set, and select the nearest one.  The premise here is that similar formulas should have similar results. This gives surprisingly high accuracy of 79%.
 
-![Edit Distance Result](figures/string_edit_distance_prediction.jpg)
+![Edit Distance Result](figures/string_edit_distance_predictions.jpg | width = 300)
 
 
 ## SentenceBERT vector similarity
@@ -37,11 +37,11 @@ Next, we examined encoding the chemical formulas using [SentenceBERT](https://ar
 
 Using the nearest similarity example yields the best results (comparable, maybe slightly better than string edit distance):
 
-![sentence BERT nearest](figures/nearest_sentenceBERT_similarity.jpg)
+![sentence BERT nearest](figures/nearest_sentenceBERT_similarity.jpg | width = 300)
 
 We can also look at the commonest label for the 10 nearest items, and this is noticeably worse:
 
-![sentence BERT commonest of 10](figures/commonest_sentenceBERT_similarity.jpg)
+![sentence BERT commonest of 10](figures/commonest_sentenceBERT_similarity.jpg | width = 300)
 
 
 **Possible improvements:**
@@ -61,11 +61,13 @@ Fine-tuning Llama-3.1 model cost $2.48 USD;  I've put the LoRA BF16 weights in `
 
 Fine-tuning gpt-4o-mini model cost $2.22 USD.  You'll have to make your own, if you want to reproduce this, but you can do it easily using the `data/train.jsonl` file.
 
-**Llama-3.1-8b**
-![Llama-3.1-8B confusion matrix](figures/llama31_predictions.jpg)
+### Llama-3.1-8b
 
-**GPT-4o-mini**
-![GPT-4o-mini confusion matrix](figures/gpt4omini_predictions.jpg)
+![Llama-3.1-8B confusion matrix](figures/llama31_predictions.jpg | width = 300)
+
+### GPT-4o-mini
+
+![GPT-4o-mini confusion matrix](figures/gpt4omini_predictions.jpg | width = 300)
 
 **Possible improvements:**
 - Play with fine-tuning hyperparameters
